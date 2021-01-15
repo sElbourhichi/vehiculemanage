@@ -49,27 +49,27 @@
                         @csrf
                         <div class="mb-3">
                             <label>Mark</label>
-                            <input type="text" name="marque" class="form-control"  placeholder="Enter mark">
+                            <input type="text" name="marque" class="form-control"  placeholder="Enter the mark" required>
                         
                         </div>
                         <div class="mb-3">
                             <label>Registration number</label>
-                            <input type="text" name="matricule" class="form-control"  placeholder="Enter registration number">
+                            <input type="text" name="matricule" class="form-control"  placeholder="Enter the registration number" required>
                             
                         </div>
                         <div class="mb-3">
                             <label>Owner</label>
-                            <input type="text" name="proprietaire" class="form-control"  placeholder="Enter the owner">
+                            <input type="text" name="proprietaire" class="form-control"  placeholder="Enter the owner" required>
                             
                         </div>
                         <div class="mb-3">
                             <label>Damage</label>
-                            <input type="text" name="dega" class="form-control"  placeholder="Enter damage">
+                            <input type="text" name="dega" class="form-control"  placeholder="Enter the type of damage" required>
                             
                         </div>
                         <div class="mb-3">
                             <label>Price</label>
-                            <input type="text" name="prix" class="form-control"  placeholder="Enter the price">
+                            <input type="text" name="prix" class="form-control"  placeholder="Enter the price (MAD)" required> 
                             
                         </div>
                         
@@ -106,25 +106,25 @@
                             @csrf
                             <div class="form-group">
                                 <label>Mark</label>
-                                <input value="{{ $vehicule->marque }}" name="marque" type="text" class="form-control"  placeholder="Enter ">
+                                <input value="{{ $vehicule->marque }}" name="marque" type="text" class="form-control"  placeholder="Enter the mark " required>
                             </div>
                             <div class="form-group">
                                 <label>Registration number</label>
-                                <input value="{{ $vehicule->matricule }}" name="matricule" type="text" class="form-control"  placeholder="Enter the first name">
+                                <input value="{{ $vehicule->matricule }}" name="matricule" type="text" class="form-control"  placeholder="Enter the registration number" required>
                             </div>
                             <div class="form-group">
                                 <label>Owner</label>
-                                <input value="{{ $vehicule->proprietaire }}" name="proprietaire" type="text" class="form-control"  placeholder="Enter second name">
+                                <input value="{{ $vehicule->proprietaire }}" name="proprietaire" type="text" class="form-control"  placeholder="Enter the owner" required>
                             </div>
                             <div class="form-group">
                                 <label>Damage</label>
-                                <input value="{{ $vehicule->dega }}" name="dega" type="text" class="form-control"  placeholder="Enter the Age">
+                                <input value="{{ $vehicule->dega }}" name="dega" type="text" class="form-control"  placeholder="Enter the type of damage" required>
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
-                                <input value="{{ $vehicule->prix}}" name="prix" type="text" class="form-control"  placeholder="Enter Sepeciality">
+                                <input value="{{ $vehicule->prix}}" name="prix" type="text" class="form-control"  placeholder="Enter the price (MAD)" required>
                             </div>
-                            <input type="submit" class="btn btn-info" value="Update">
+                            <input type="submit" class="btn btn-info" value="Update" >
                             <input type="reset" class="btn btn-warning" value="Reset">
 
                         </form>
