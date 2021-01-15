@@ -39,19 +39,21 @@ class VehiculeController extends Controller
     public function store(Request $request)
     {
         $vehicule = new Vehicule();
-        
-            $vehicule->marque = $request->input('marque');
-            $vehicule->matricule = $request->input('matricule');
-            $vehicule->proprietaire = $request->input('proprietaire');                   
-            $vehicule->dega = $request->input('dega');
-            try{
-                $vehicule->prix = $request->input('prix');
-                $vehicule->save();
-                return redirect('/');
-            }catch(Exception $e){
-                echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
-
-            }
+        $vehicule->marque = $request->input('marque');
+        $vehicule->matricule = $request->input('matricule');
+        $vehicule->proprietaire = $request->input('proprietaire');                   
+        $vehicule->dega = $request->input('dega');
+        try{
+            $vehicule->prix = $request->input('prix');
+            $vehicule->save();
+            return redirect('/');
+        }
+        catch (Exception $e) {
+           
+            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+        } catch (Throwable $e) {
+            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+        }
        
 
     }
@@ -105,6 +107,8 @@ class VehiculeController extends Controller
         }catch(Exception $e){
             echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
 
+        }catch (Throwable $e) {
+            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
         }
     }
 
