@@ -49,11 +49,11 @@ class VehiculeController extends Controller
             $vehicule->save();
             return redirect('/');
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
 
            return redirect('/create');
             echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             return redirect('/create');
             echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
         }
