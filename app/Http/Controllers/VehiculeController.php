@@ -50,12 +50,13 @@ class VehiculeController extends Controller
             return redirect('/');
         }
         catch (\Exception $e) {
-
+            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
            return redirect('/create');
-            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+            
         } catch (\Throwable $e) {
-            return redirect('/create');
             echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+            return redirect('/create');
+            
         }
        
 
