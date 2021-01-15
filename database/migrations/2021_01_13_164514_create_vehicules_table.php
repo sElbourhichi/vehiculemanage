@@ -19,7 +19,7 @@ class CreateVehiculesTable extends Migration
             $table->string("matricule");
             $table->string("proprietaire");
             $table->string("dega");
-            $table->integer("prix");
+            $table->string("prix");
 
             $table->timestamps();
         });
