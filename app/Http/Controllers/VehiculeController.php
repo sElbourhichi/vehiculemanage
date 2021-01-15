@@ -47,10 +47,12 @@ class VehiculeController extends Controller
             
             $vehicule->prix = $request->input('prix');
             $vehicule->save();
-            //return redirect('/');
+            return redirect('/');
         }
         catch (\Exception $e) {
             echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+          
+            
            
             
         } catch (\Throwable $e) {
