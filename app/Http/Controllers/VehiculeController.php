@@ -38,7 +38,7 @@ class VehiculeController extends Controller
      */
     public function store(Request $request)
     {
-       
+            $vehicules = Vehicule::all();
             $vehicule = new Vehicule();
             $vehicule->marque = $request->input('marque');
             $vehicule->matricule = $request->input('matricule');
@@ -46,8 +46,18 @@ class VehiculeController extends Controller
             $vehicule->dega = $request->input('dega');
             
             $vehicule->prix = $request->input('prix');
+            try{
             $vehicule->save();
             return redirect('/');
+            } catch(\Exception $e){
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+            return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
+                
+            }catch(\Throwable $e){
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+            return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
+            }
+           
       
 
     
