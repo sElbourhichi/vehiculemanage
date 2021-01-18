@@ -38,7 +38,7 @@ class VehiculeController extends Controller
      */
     public function store(Request $request)
     {
-        if(is_integer($request->input('prix'))){
+       
             $vehicule = new Vehicule();
             $vehicule->marque = $request->input('marque');
             $vehicule->matricule = $request->input('matricule');
@@ -48,14 +48,7 @@ class VehiculeController extends Controller
             $vehicule->prix = $request->input('prix');
             $vehicule->save();
             return redirect('/');
-        } else {
-            $vehicules = Vehicule::all();
-            $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
-            return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
-
-
-
-        }
+      
 
     
 
