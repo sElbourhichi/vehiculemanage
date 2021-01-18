@@ -50,8 +50,9 @@ class VehiculeController extends Controller
             return redirect('/');
         } else {
             $vehicules = Vehicule::all();
-            $a = '<script type="text/javascript">window.alert("the price should be a number");</script>';
-            return view('vehicule',['vehicules'=>$vehicules,'layout'=>'att']);
+            $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+            return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
+
 
 
         }
