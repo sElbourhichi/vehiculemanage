@@ -132,7 +132,7 @@
                 </section>
             </div>
         </div>
-    @elseif($layout =='att')
+   @elseif($layout =='att')
     <div class="container-fluid mt-4">
             <div class="row">
                 <section class="col-md-7">
@@ -145,24 +145,25 @@
                         <h5 class="card-title">Enter the informations of the vehicule</h5>
                     <form action="{{ url('/store')}}" method="POST">
                         @csrf
+
                         <div class="mb-3">
                             <label>Mark</label>
-                            <input type="text" name="marque" class="form-control"  placeholder="Enter the mark" required>
+                            <input type="text" value="{{ $array[0]}}"  name="marque" class="form-control"  placeholder="Enter the mark" required>
                         
                         </div>
                         <div class="mb-3">
                             <label>Registration number</label>
-                            <input type="text" name="matricule" class="form-control"  placeholder="Enter the registration number" required>
+                            <input type="text" value="{{ $array[1]}}" name="matricule" class="form-control"  placeholder="Enter the registration number" required>
                             
                         </div>
                         <div class="mb-3">
                             <label>Owner</label>
-                            <input type="text" name="proprietaire" class="form-control"  placeholder="Enter the owner" required>
+                            <input type="text" value="{{ $array[2]}}" name="proprietaire" class="form-control"  placeholder="Enter the owner" required>
                             
                         </div>
                         <div class="mb-3">
                             <label>Damage</label>
-                            <input type="text" name="dega" class="form-control"  placeholder="Enter the type of damage" required>
+                            <input type="text" value="{{ $array[3]}}" name="dega" class="form-control"  placeholder="Enter the type of damage" required>
                             
                         </div>
                         <div class="mb-3">
