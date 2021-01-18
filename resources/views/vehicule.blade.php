@@ -132,6 +132,55 @@
                 </section>
             </div>
         </div>
+    @elseif($layout =='att')
+    <div class="container-fluid mt-4">
+            <div class="row">
+                <section class="col-md-7">
+                @include("vehiculeslist")
+                </section>
+                <section class="col-md-5">
+                <div class="card mb-3">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Enter the informations of the vehicule</h5>
+                    <form action="{{ url('/store')}}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label>Mark</label>
+                            <input type="text" name="marque" class="form-control"  placeholder="Enter the mark" required>
+                        
+                        </div>
+                        <div class="mb-3">
+                            <label>Registration number</label>
+                            <input type="text" name="matricule" class="form-control"  placeholder="Enter the registration number" required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label>Owner</label>
+                            <input type="text" name="proprietaire" class="form-control"  placeholder="Enter the owner" required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label>Damage</label>
+                            <input type="text" name="dega" class="form-control"  placeholder="Enter the type of damage" required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label>Price</label>
+                            <input type="text" name="prix" class="form-control"  placeholder="Enter the price (MAD)" required> 
+                            
+                        </div>
+                        
+                        <input type="submit" class="btn btn-info" value="Save">
+                        <input type="reset" class="btn btn-warning" value="Reset">
+                    </form>
+                    </div>
+                </div>
+                </section>
+            </div>
+            
+        </div>
+        <script type="text/javascript">window.alert("the price should be a number");</script>
     @endif
 
     <!-- Optional JavaScript; choose one of the two! -->
