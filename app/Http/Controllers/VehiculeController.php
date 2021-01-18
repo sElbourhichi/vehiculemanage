@@ -98,7 +98,7 @@ class VehiculeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if(is_integer($request->input('prix'))){
+        
         $vehicule = Vehicule::find($id);
         $vehicule->marque = $request->input('marque');
         $vehicule->matricule = $request->input('matricule');
@@ -109,11 +109,7 @@ class VehiculeController extends Controller
         $vehicule->save();
         return redirect('/');
         
-    } else {
-            return return redirect('/edit/'.$id);;
-
-
-        }
+    
     }
     /**
      * Remove the specified resource from storage.
