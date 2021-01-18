@@ -1,8 +1,8 @@
 <div class="card mb-3">
   <img src="https://cdn.pixabay.com/photo/2016/11/29/09/32/antique-1868726_1280.jpg" class="card-img-top" alt="...">
   <div class="card-body">
-  <h5 class="card-title">List of vehicules</h5>
-    <p class="card-text">You can find here all the informatins about vehicules in the system</p>
+  <h5 class="card-title">List of Vehicles</h5>
+    <p class="card-text">You can find here all the informatins about vehicles in the system</p>
     <table class="table">
   <thead class="table-dark">
     <tr>
