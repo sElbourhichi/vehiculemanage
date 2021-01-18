@@ -53,6 +53,7 @@ class VehiculeController extends Controller
                 
             }else{
                 echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+                return redirect('/create');
 }
 
     }
