@@ -50,11 +50,11 @@ class VehiculeController extends Controller
             $vehicule->save();
             return redirect('/');
             } catch(\Exception $e){
-                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
             return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
                 
             }catch(\Throwable $e){
-                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
             return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
             }
            
@@ -101,7 +101,7 @@ class VehiculeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $vehicules = Vehicule::all();
         $vehicule = Vehicule::find($id);
         $vehicule->marque = $request->input('marque');
         $vehicule->matricule = $request->input('matricule');
@@ -109,8 +109,17 @@ class VehiculeController extends Controller
         $vehicule->dega = $request->input('dega');
         
         $vehicule->prix = $request->input('prix');
-        $vehicule->save();
-        return redirect('/');
+          try{
+            $vehicule->save();
+            return redirect('/');
+            } catch(\Exception $e){
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
+            return view('vehicule',['vehicules'=>$vehicules,'vehicule'=>$vehicule,'array'=>$array,'layout'=>'attt']);
+                
+            }catch(\Throwable $e){
+                $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
+            return view('vehicule',['vehicules'=>$vehicules,'vehicule'=>$vehicule,'array'=>$array,'layout'=>'attt']);
+            };
         
     
     }
