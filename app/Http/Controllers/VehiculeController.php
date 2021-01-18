@@ -38,33 +38,22 @@ class VehiculeController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $vehicule = new Vehicule();
-            $vehicule->marque = $request->input('marque');
-            $vehicule->matricule = $request->input('matricule');
-            $vehicule->proprietaire = $request->input('proprietaire');                   
-            $vehicule->dega = $request->input('dega');
-            
-            $vehicule->prix = $request->input('prix');
-            $vehicule->save();
-            
-        }
-        catch (\Exception $e) {
-            print'<script type="text/javascript">window.alert("the price should be a number");</script>';
-            sleep(4);
-          
+            if(is_integer($request->input('prix'))){
+                $vehicule = new Vehicule();
+                $vehicule->marque = $request->input('marque');
+                $vehicule->matricule = $request->input('matricule');
+                $vehicule->proprietaire = $request->input('proprietaire');                   
+                $vehicule->dega = $request->input('dega');
             
            
-            
-        } catch (\Throwable $e) {
-            print'<script type="text/javascript">window.alert("the price should be a number");</script>';
-            sleep(4);
-            
-            
-        }finally {
-            return redirect('/');
-        }
-       
+                
+                $vehicule->prix = $request->input('prix');
+                $vehicule->save();
+                 return redirect('/');
+                
+            }else{
+                echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+}
 
     }
 
