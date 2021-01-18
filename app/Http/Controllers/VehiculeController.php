@@ -50,7 +50,7 @@ class VehiculeController extends Controller
             return redirect('/');
         } else {
             $vehicules = Vehicule::all();
-            $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'), $request->input('proprietaire'),$request->input('dega'));
+            $array = array( $request->input('marque'), $request->input('matricule'), $request->input('proprietaire'),$request->input('dega'));
             return view('vehicule',['vehicules'=>$vehicules,'array'=>$array,'layout'=>'att']);
 
 
