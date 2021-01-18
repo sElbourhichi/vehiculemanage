@@ -97,7 +97,7 @@ class VehiculeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try{
+        if(is_integer($request->input('prix'))){
         $vehicule = Vehicule::find($id);
         $vehicule->marque = $request->input('marque');
         $vehicule->matricule = $request->input('matricule');
@@ -107,15 +107,13 @@ class VehiculeController extends Controller
         $vehicule->prix = $request->input('prix');
         $vehicule->save();
         return redirect('/');
-        }catch(\Exception $e){
-            
-            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+        
+    } else {
+            return return redirect('/edit/'.$id);;
 
-        }catch (\Throwable $e) {
-            echo '<script type="text/javascript">window.alert("the price should be a number");</script>';
+
         }
     }
-
     /**
      * Remove the specified resource from storage.
      *
