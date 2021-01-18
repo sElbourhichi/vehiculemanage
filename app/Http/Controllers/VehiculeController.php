@@ -51,12 +51,14 @@ class VehiculeController extends Controller
         }
         catch (\Exception $e) {
             print'<script type="text/javascript">window.alert("the price should be a number");</script>';
+            sleep(4);
           
             
            
             
         } catch (\Throwable $e) {
             print'<script type="text/javascript">window.alert("the price should be a number");</script>';
+            sleep(4);
             
             
         }finally {
